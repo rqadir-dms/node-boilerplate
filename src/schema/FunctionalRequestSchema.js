@@ -1,8 +1,8 @@
 function FunctionalRequestSchema(opts) {
 
-    const { 
+    const {
         functionalRequestHandlers,
-        requestHeaderHandlers, 
+        requestHeaderHandlers,
         commonRequestHeaders,
     } = opts;
 

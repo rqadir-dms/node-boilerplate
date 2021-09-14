@@ -9,3 +9,9 @@ RUN npm install
 
 # copy codebase to docker codebase
 ADD . /myapp
+
+# Expose port
+EXPOSE 3000 7780 7778 7779
+
+ENTRYPOINT [ "npm", "run" ]
+CMD [ "my-local" ]

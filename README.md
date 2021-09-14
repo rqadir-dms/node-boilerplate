@@ -18,7 +18,7 @@ NodeJs Boilerplate is an efficient boilerplate or bootstrap framework for node.j
 
 **Motivation**
 
-One of the main objectives of this project is to give a starting point to node.js developers with high performance. 
+One of the main objectives of this project is to give a starting point to node.js developers with high performance.
 
 
 **License**
@@ -32,10 +32,28 @@ MIT
     gh repo clone bykea/node-boilerplate
     npm install
     npm run my-local
-    
+
 
 
 
 **Contributions**
 
 Bykea always welcome contributions. If you have a suggestion or an idea, please open a Github issue to get some feedback before you start implementing, to make sure that the maintainers are ready to accept it.
+
+
+**cURL Requests for Demo**
+
+Populate "matches" table in the database
+psql docker -h localhost -p 7778 -d bykea_acm -a -f src/db_scripts/epl_matches.sql
+
+For DELETE
+curl -X DELETE http://localhost:3000/v1/match/erase/TOTCHE
+
+For CREATE
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"match_week": 6, "home_team": "MUN", "away_team": "AVL", "stadium": "Old Trafford", "code": "MUNAVL"}' \
+    http://localhost:3000/v1/match/add
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"match_week": 6, "code": "NEWLEE"}' \
+    http://localhost:3000/v1/match/update
