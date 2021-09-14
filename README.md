@@ -43,17 +43,24 @@ Bykea always welcome contributions. If you have a suggestion or an idea, please 
 
 **cURL Requests for Demo**
 
-Populate "matches" table in the database
+###### Populate "matches" table in the database
+```bash
 psql docker -h localhost -p 7778 -d bykea_acm -a -f src/db_scripts/epl_matches.sql
 
-For DELETE
+```
+###### For DELETE
+```bash
 curl -X DELETE http://localhost:3000/v1/match/erase/TOTCHE
-
-For CREATE
+```
+###### For CREATE
+```bash
 curl -X POST -H "Content-Type: application/json" \
     -d '{"match_week": 6, "home_team": "MUN", "away_team": "AVL", "stadium": "Old Trafford", "code": "MUNAVL"}' \
     http://localhost:3000/v1/match/add
-
+```
+###### For UPDATE
+```bash
 curl -X POST -H "Content-Type: application/json" \
     -d '{"match_week": 6, "code": "NEWLEE"}' \
     http://localhost:3000/v1/match/update
+```
